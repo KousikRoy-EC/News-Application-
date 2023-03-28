@@ -1,0 +1,40 @@
+.category {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+}
+
+.category::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryItems {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 6px 17px;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  height: 30px;
+  left: 56px;
+  top: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 0.2px solid #ffffff;
+  box-shadow: 0px 2px 20px rgba(0.1, 0.1, 0.1, 0.05);
+  border-radius: 20px;
+}
+
+.categoryHeading {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.head {
+  margin: 20px 0px;
+}
