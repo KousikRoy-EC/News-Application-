@@ -40,7 +40,7 @@
   align-items: flex-start;
   padding: 4px 13px;
   gap: 10px;
-  width: 75px;
+  width: auto;
   height: 22px;
   left: 13.44px;
   top: 14.76px;
@@ -84,7 +84,7 @@
 }
 
 .source {
-  width: 66px;
+  /* width: 66px; */
   height: 12px;
   left: 9.9px;
   top: 285.78px;

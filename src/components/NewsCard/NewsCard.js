@@ -1,25 +1,29 @@
 import React from "react";
 import "./NewsCard.css";
+import timeSince from "../../utils/TimeFunction";
 
-const NewsCard = () => {
+const NewsCard = (Data) => {
   return (
     <>
-      <div className="card">
+    {Data.newsData.map((item) => {
+      return(
+        <div className="card">
         <img
           className="newsImg"
-          src="https://random.imagecdn.app/50/50"
+          src={item.urlToImage}
           alt="carousel"
         />
-        <p className="timing">1 day ago</p>
+        <p className="timing">{timeSince(item.publishedAt)}</p>
         <p className="headingCard">
-          Battlegrounds Mobile India iOS release date
+          {item.title.split(/\s+/).slice(0, 5).join(" ")}
         </p>
         <p className="description">
-          The reason behind their disappointment is that iPhone users have
-          been..
+          {item.description.split(/\s+/).slice(0, 10).join(" ")}
         </p>
-        <p className="footer">Matt Young</p>
+        <p className="footer">{item.author}</p>
       </div>
+      )
+    })}     
     </>
   );
 };

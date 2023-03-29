@@ -1,62 +1,43 @@
 import React from "react";
 import "./Carousel.css";
 import vector from "../../asset/Vector.png";
+import timeSince from "../../utils/TimeFunction";
 
-const Carousel = () => {
+const Carousel = (Data) => {
   return (
     <>
-      <div className="carousel">
-        <div className="carouselItem">
+ <div className="carousel">
+  {Data.newsData.map((item) => {
+   return(
+    <div className="carouselItem">
           <img
             className="carouselImg"
-            src="https://random.imagecdn.app/50/50"
+            src={item.urlToImage}
             alt="carousel"
           />
           <div className="carouselHead">
-            <div className="carouselTopic">Buisness</div>
+            <div className="carouselTopic">{item.source.name}</div>
             <img className="saveIcon" src={vector} alt="save" />
           </div>
           <div className="carouselFooter">
-            <p className="subDetails">10 hours ago</p>
+            <p className="subDetails">{timeSince(item.publishedAt)}</p>
             <p>
-              Lyft Revenue Grew Last Quarter Though Rider Numbers Were Below
-              Expectations
+              {item.title}
             </p>
-            <p className="subDetails">Lyft Inc.s stock fell Monday after...</p>
-            <p className="source">Preetika Rana</p>
+            <p className="subDetails">{item.description.split(/\s+/).slice(0, 5).join(" ")}</p>
+            <p className="source">{item.author}</p>
           </div>
         </div>
-        <div className="carouselItem">
-          <img
-            className="carouselImg"
-            src="https://random.imagecdn.app/50/50"
-            alt="carousel"
-          />
-        </div>
-        <div className="carouselItem">
-          <img
-            className="carouselImg"
-            src="https://random.imagecdn.app/50/50"
-            alt="carousel"
-          />
-        </div>
-        <div className="carouselItem">
-          <img
-            className="carouselImg"
-            src="https://random.imagecdn.app/50/50"
-            alt="carousel"
-          />
-        </div>
-        <div className="carouselItem">
-          <img
-            className="carouselImg"
-            src="https://random.imagecdn.app/50/50"
-            alt="carousel"
-          />
-        </div>
+   )
+ })} 
+
+     
+        
       </div>
     </>
   );
 };
 
 export default Carousel;
+
+
